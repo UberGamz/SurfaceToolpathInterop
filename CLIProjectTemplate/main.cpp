@@ -35,6 +35,25 @@ static char THIS_FILE[] = __FILE__;
 
 #pragma region Required Methods
 
+/// <summary> Retrieves the operations found in the Toolpath Manager of the specified type. </summary>
+///
+/// <param name="opCode"> (Optional) The operation code to filter on. (TP_NULL for NO Filtering). </param>
+///
+/// <returns> The list of matching operations found. </returns>
+std::vector<operation*> GetOperations(TP_OPCODE opCode = TP_OPCODE::TP_NULL)
+{
+	std::vector<operation*> ops;
+	for (auto index = 0; index < TpMainOpMgr.GetMainOpList().GetSize(); ++index)
+	{
+		auto op = TpMainOpMgr.GetMainOpList()[index];
+		if (op && (opCode == TP_NULL || op->opcode == opCode))
+		{
+			ops.push_back(op);
+		}
+	}
+
+	return ops;
+}
 /// <summary> The REQUIRED m_version function. </summary>
 ///
 /// <remarks> Mastercam calls this function first, when your C-Hook is about to be run.

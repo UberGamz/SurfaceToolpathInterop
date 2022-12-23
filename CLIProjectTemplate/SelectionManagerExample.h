@@ -20,24 +20,27 @@ using namespace Mastercam::IO;
 using namespace Mastercam::IO::Types;
 
 /// <summary> The SelectionManager class. </summary>
-public ref class SelectionManager
-	{
+ref class SurfaceToolpathInterop abstract sealed
+{
 public:
-	/// <summary> This method create a geometry (circle). </summary>
+	/// <summary> Retrieves the operations found in the Toolpath Manager of the specified type. </summary>
 	///
-	/// <returns> ID of created geometry. </returns>
-	static int SelectionManager::CreateGeometry ();
+	/// <param name="opCode"> (Optional) The operation code to filter on. (TP_NULL for NO Filtering). </param>
+	///
+	/// <returns> The list of matching operations found. </returns>
+	static System::Collections::Generic::List<int>^ GetOperations(int opCode)
+	{
 
-	/// <summary> This method retrieves the entity of the geometry and do a translation. </summary>
-	///
-	/// <param name="geom"> The geometry selected by the user. </param>
-	///
-	/// <returns> True if it succeeds, false if it fails. </returns>
-	static bool SelectionManager::TranslateSelectedGeometry (int geometryId);
+		auto list = gcnew System::Collections::Generic::List<int>();
+		for (auto index = 0; index < TpMainOpMgr.GetMainOpList().GetSize(); ++index)
+		{
+			auto op = TpMainOpMgr.GetMainOpList()[index];
+			if (op && (opCode == TP_NULL || op->opcode == opCode))
+			{
+				list->Add(op->op_idn);
+			}
+		}
 
-	/// <summary> This method allows to move the entity of the geometry selected. </summary>
-	///
-	/// <returns> True if it succeeds, false if it fails. </returns>
-	static bool SelectionManager::MoveEntity (ent *entity);
-	};
-}
+		return list;
+	}
+};
