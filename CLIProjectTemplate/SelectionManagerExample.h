@@ -7,20 +7,17 @@
 
 #pragma once
 
-namespace Mastercam::IO::Interop {
+namespace Mastercam::IO::Interop {}
 
 using namespace System;
 using namespace System::Collections::Generic;
 
 // Namespaces we reference in the NET-Hook API
-using namespace Mastercam::App::Types;
-using namespace Mastercam::Database;
-using namespace Mastercam::Database::Types;
+
 using namespace Mastercam::IO;
-using namespace Mastercam::IO::Types;
 
 /// <summary> The SelectionManager class. </summary>
-ref class SurfaceToolpathInterop abstract sealed
+ref class OperationsManagerInterop abstract sealed
 {
 public:
 	/// <summary> Retrieves the operations found in the Toolpath Manager of the specified type. </summary>

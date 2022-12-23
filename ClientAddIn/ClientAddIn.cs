@@ -23,11 +23,7 @@ namespace ClientAddIn
         /// <returns>A MCamReturn return type representing the outcome of the NetHook add-in.</returns>
         public override MCamReturn Run(int param)
         {
-            // Creates a geometry 
-            var geometryId = Mastercam.IO.Interop.SelectionManager.CreateGeometry();
 
-            // Translates the geometry created
-            bool resultat = Mastercam.IO.Interop.SelectionManager.TranslateSelectedGeometry(geometryId);
 
             return MCamReturn.NoErrors;
         }
