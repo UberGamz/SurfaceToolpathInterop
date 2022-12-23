@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{b9a7cb37-a985-4f38-9a31-b43d76915880}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{1c337e96-cd65-4d2b-8db4-d306e6404d87}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{844088e8-686b-4377-b6da-fc3cc0339792}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Docs">
+      <UniqueIdentifier>{aeb7fd78-bf94-4029-9771-df33a1d715b0}</UniqueIdentifier>
+      <Extensions>docx;pdf;txt;rtf;xps</Extensions>
+    </Filter>
+    <Filter Include="Property Sheet">
+      <UniqueIdentifier>{496e012c-ef01-45b5-b1eb-20986680f88c}</UniqueIdentifier>
+      <Extensions>props</Extensions>
+    </Filter>
+    <Filter Include="Build Events">
+      <UniqueIdentifier>{1fc950d8-ce17-4638-b6ce-ba823577d548}</UniqueIdentifier>
+      <Extensions>bat;cmd;ps1</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectionManagerExample.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceReaderService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectionManagerExample.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceReaderService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Post-Build-InstallAddIn.bat">
+      <Filter>Build Events</Filter>
+    </None>
+    <None Include="Pre-Build-CheckFolder.bat">
+      <Filter>Build Events</Filter>
+    </None>
+    <None Include="MastercamSDK.props">
+      <Filter>Property Sheet</Filter>
+    </None>
+    <None Include="Using a props file to set the path to the SDK.pdf">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="Pre-Build Events.pdf">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="Post-Build Events.pdf">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="Open PDF Files in Solution Explorer.docx">
+      <Filter>Docs</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CLIProjectTemplate.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
